@@ -1,0 +1,35 @@
+﻿<Window x:Class="SampleProject.SwitchCollectionsWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="http://fabtab.codeplex.com"
+    Title="SwitchCollectionsWindow" Height="600" Width="800">
+    <Window.Resources>
+        <Style TargetType="{x:Type local:FabTabItem}">
+            <Setter Property="Header" Value="{Binding Path=LabelText}"/>
+            <Setter Property="HeaderTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,4,0">
+                            <TextBlock Text="{Binding}" TextTrimming="CharacterEllipsis"/>
+
+                        </StackPanel>
+
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        
+        <local:FabTabControl Name="myTab" Grid.Column="0"/>
+        <StackPanel Grid.Column="1">
+            <Button Content="Use ItemsSource" Click="Button_Click"/>
+            <Button Content="Use Items" Click="Button_Click_1"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>

@@ -1,0 +1,17 @@
+﻿<Window x:Class="SampleProject.NoXamlWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        Title="No XAML Window (do everything in codebehind)"
+    Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+    <Grid Name="grid" Grid.Column="0">
+        
+    </Grid>
+        <Button Content="Add Tab" Grid.Column="1" Click="Button_Click"   />
+    </Grid>
+    
+</Window>
