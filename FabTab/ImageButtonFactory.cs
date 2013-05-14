@@ -34,7 +34,8 @@ namespace FabTab
                 object title = null;
                 if (_contentTabView.Views.TryGetValue(view, out title))
                 {
-                    imageButton.Title = title.ToString();
+                    imageButton.Title = title == null ? 
+                        string.Empty : title.ToString();
                 }
 
                 imageButton.Click += new RoutedEventHandler(imageButton_Click);
